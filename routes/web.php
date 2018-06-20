@@ -1,5 +1,7 @@
 <?php
 
+use App\Todo;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,7 +21,14 @@
  * Get the ACTIVE todo tasks.
  */
 Route::get('/', function() {
-    // code to fetch todo tasks
+    $todo = new Todo();
+
+    $result = $todo
+                ->where('status', '=', 'ACTIVE')
+                ->forPage(1, 10)
+                ->get();
+
+    return $result;
 });
 
 /**
