@@ -35,21 +35,42 @@ Route::get('/', function() {
  * Get the ACTIVE todo tasks for a given page.
  */
 Route::get('/todo/active/{page?}', function($page = 1) {
-    // code to fetch the todo tasks on page = $page
+    $todo = new Todo();
+
+    $result = $todo
+                ->where('status', '=', 'ACTIVE')
+                ->forPage($page, 10)
+                ->get();
+
+    return $result;
 });
 
 /**
  * Get the DONE todo tasks for a given page.
  */
 Route::get('/todo/done/{page?}', function($page = 1) {
-    // code to fetch the todo tasks on page = $page
+    $todo = new Todo();
+
+    $result = $todo
+                ->where('status', '=', 'DONE')
+                ->forPage($page, 10)
+                ->get();
+
+    return $result;
 });
 
 /**
  * Get the DELETED todo tasks for a given page.
  */
 Route::get('/todo/deleted/{page?}', function($page = 1) {
-    // code to fetch the todo tasks on page = $page
+    $todo = new Todo();
+
+    $result = $todo
+                ->where('status', '=', 'DELETED')
+                ->forPage($page, 10)
+                ->get();
+
+    return $result;
 });
 
 /**
