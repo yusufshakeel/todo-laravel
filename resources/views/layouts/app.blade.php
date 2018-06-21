@@ -10,6 +10,13 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 
+  <style type="text/css">
+    body {
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+  </style>
+
 </head>
 <body>
 

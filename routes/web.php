@@ -43,7 +43,8 @@ Route::get('/todo/active/{page?}', function($page = 1) {
                 ->forPage($page, 10)
                 ->get();
 
-    return $result;
+    // return $result;
+    return view('active', ['todos' => $result, 'page' => $page]);
 });
 
 /**
@@ -57,7 +58,8 @@ Route::get('/todo/done/{page?}', function($page = 1) {
                 ->forPage($page, 10)
                 ->get();
 
-    return $result;
+    // return $result;
+    return view('done', ['todos' => $result, 'page' => $page]);
 });
 
 /**
@@ -71,7 +73,8 @@ Route::get('/todo/deleted/{page?}', function($page = 1) {
                 ->forPage($page, 10)
                 ->get();
 
-    return $result;
+    // return $result;
+    return view('deleted', ['todos' => $result, 'page' => $page]);
 });
 
 /**
