@@ -26,6 +26,7 @@ Route::get('/', function() {
 
     $result = $todo
                 ->where('status', '=', 'ACTIVE')
+                ->orderBy('created_at', 'DESC')
                 ->forPage(1, 10)
                 ->get();
 
