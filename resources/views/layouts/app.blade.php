@@ -45,6 +45,8 @@
   </div>
   <!-- navigation bar ends here -->
 
+  @include('layouts.form-new-todo')
+
 
   @yield('content')
 
