@@ -21,6 +21,10 @@
 <body>
 
   <!-- navigation bar -->
+  <!--
+    you can move this to a separate file
+    i have placed this nav bar code here only for demo
+  -->
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-6 offset-sm-3 col-md-6 offset-md-3">

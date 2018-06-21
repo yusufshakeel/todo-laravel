@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Todo;
 
 /*
@@ -83,7 +84,18 @@ Route::get('/todo/deleted/{page?}', function($page = 1) {
  * Get a specific todo task by id.
  */
 Route::get('/todo/{id}', function($id) {
-    // code to fetch todo task having id = $id
+    $todo = new Todo();
+
+    $result = $todo->find($id);
+
+    if (isset($result['id'])) {
+        return response($result, 200)
+                  ->header('Content-Type', 'application/json');
+    } else {
+        return response(array(
+            'error' => 'No match found'
+        ), 200)->header('Content-Type', 'application/json');;
+    }
 });
 
 /**

@@ -16,7 +16,19 @@
           <ul class="list-group">
           @foreach ($todos as $todo)
 
-            <li class="list-group-item">{{ $todo->title }}</li>
+            <li class="list-group-item">
+              <p>
+                <a data-toggle="collapse" href="#collapse-id-{{ $todo->id }}">{{ $todo-> title }}</a>
+              </p>
+              <div class="collapse" id="collapse-id-{{ $todo->id }}">
+                <div class="card card-body">
+                  <div class="todo-description">{{ $todo->description }}</div>
+                  <hr>
+                  <p>Status: {{ $todo->status }}</p>
+                  <p title="{{ $todo->created_at }}">Created: {{ $todo->created_at->diffForHumans() }}</p>
+                </div>
+              </div>
+            </li>
 
           @endforeach
           </ul>
