@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use App\Todo;
 
 /*
@@ -87,8 +88,35 @@ Route::get('/todo/{id}', function($id) {
 /**
  * Create a new todo task.
  */
-Route::post('/todo', function() {
-    // code to create new todo task
+Route::post('/todo', function(Request $request) {
+
+    // validate
+    $validator = Validator::make($request->all(), [
+        'todo-title' => 'required|max:100',
+        'todo-description' => 'required|max:5000',
+    ]);
+
+    // if error
+    if ($validator->fails()) {
+        return 'Error in submitted data.';
+    }
+
+    // now create new todo
+    $todo = new Todo();
+
+    if (isset($request['todo-title'])) {
+        $todo->title = $request['todo-title'];
+    }
+    if (isset($request['todo-description'])) {
+        $todo->description = $request['todo-description'];
+    }
+
+    // now save
+    $todo->save();
+
+    // redirect to home
+    return redirect('/');
+
 });
 
 /**
