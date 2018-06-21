@@ -13,7 +13,7 @@
 </head>
 <body>
 
-  @yield('content');
+  @yield('content')
 
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

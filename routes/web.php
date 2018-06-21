@@ -28,7 +28,8 @@ Route::get('/', function() {
                 ->forPage(1, 10)
                 ->get();
 
-    return $result;
+    // return $result;
+    return view('home', ['todos' => $result]);
 });
 
 /**
