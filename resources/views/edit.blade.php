@@ -31,7 +31,12 @@
             <!-- Todo description -->
             <div class="form-group">
               <label for="todo-description" class="control-label">Description</label>
-              <textarea name="todo-description" id="todo-description" class="form-control" rows="3" maxlength="5000" required>{{ $todo->description }}</textarea> 
+              <textarea name="todo-description" 
+                        id="todo-description" 
+                        class="form-control" 
+                        rows="3" 
+                        maxlength="5000" 
+                        required>{{ $todo->description }}</textarea> 
             </div>
 
             <!-- Todo status -->
