@@ -13,6 +13,9 @@
   <!-- font awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
+  <!-- csrf token -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+
   <style type="text/css">
     body {
       padding-top: 70px;
@@ -62,6 +65,8 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
 
 </body>
 </html>

@@ -22,6 +22,9 @@
                 <div class="btn-group btn-group-sm float-right" role="group" aria-label="Basic example">
                   <a href='/todo/{{ $todo->id }}' 
                      class="btn btn-secondary"><i class="fa fa-pencil"></i></a>
+                  <button
+                    class="btn btn-secondary todo-delete-btn"
+                    data-id="{{ $todo->id }}"><i class="fa fa-trash"></i></button>
                 </div>
               </div>
               <div class="collapse" id="collapse-id-{{ $todo->id }}">

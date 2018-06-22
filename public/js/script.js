@@ -1,0 +1,26 @@
+$(function(){
+
+  // handle delete button click
+  $('body').on('click', '.todo-delete-btn', function(e) {
+    e.preventDefault();
+
+    // get the id of the todo element
+    var id = $(this).attr('data-id');
+
+    // get csrf token value
+    var csrf_token = $('meta[name="csrf-token"]').attr('content');
+
+    // now make the ajax request
+    $.ajax({
+      'url': '/todo/' + id,
+      'type': 'DELETE',
+      headers: { 'X-CSRF-TOKEN': csrf_token }
+    }).done(function() {
+      console.log('Todo task deleted: ' + id);
+    }).fail(function() {
+      alert('something went wrong!');
+    });
+
+  });
+
+});
