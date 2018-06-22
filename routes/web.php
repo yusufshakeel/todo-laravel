@@ -122,9 +122,7 @@ Route::post('/todo', function(Request $request) {
 /**
  * Update a specific todo task by id.
  */
-Route::put('/todo/{id}', function($id) {
-    // code to update todo task having id = $id
-});
+Route::put('/todo/{id}', 'TodoController@updateTodoById');
 
 /**
  * Delete a specific todo task by id.

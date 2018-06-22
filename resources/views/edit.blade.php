@@ -13,8 +13,10 @@
 
           <h3 class="text-center">Edit Todo #{{ $todo->id }}</h3>
 
-          <form action="/todo/{{ $todo->id }}" method="PUT">
+          <form action="/todo/{{ $todo->id }}" method="POST">
             {{ csrf_field() }}
+
+            {{ method_field('PUT') }}
 
             <!-- Todo title -->
             <div class="form-group">
