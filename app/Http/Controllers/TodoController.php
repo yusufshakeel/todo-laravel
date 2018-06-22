@@ -13,6 +13,7 @@ class TodoController extends Controller
 
     	$result = $todo->find($id);
 
-    	return $result;
+    	// return $result;
+    	return view('edit', ['todo' => $result]);
     }
 }

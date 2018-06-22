@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Todo Laravel - Yusuf Shakeel')
+@section('title', 'Deleted - Todo Laravel - Yusuf Shakeel')
 
 @section('content')
 <div class="container">
