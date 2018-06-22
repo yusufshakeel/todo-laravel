@@ -127,6 +127,4 @@ Route::put('/todo/{id}', 'TodoController@updateTodoById');
 /**
  * Delete a specific todo task by id.
  */
-Route::delete('/todo/{id}', function($id) {
-    return array('id' => $id);
-});
+Route::delete('/todo/{id}', 'TodoController@deleteTodoById');
